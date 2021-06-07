@@ -22,6 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 ## CEP
 
-Route::resource('address',   AddressController::class);
-Route::get('address/search', [AddressController::class, 'search'])->name('search');
-Route::get('address/cep/{cep}',  [AddressController::class, 'addressByCep'])->name('address_by_cep');
+Route::get('address/search/{term?}',   [AddressController::class, 'search'])->name('search');
+Route::get('address/cep/{cep}',        [AddressController::class, 'addressByCep'])->name('address_by_cep');
+Route::resource('address',             AddressController::class);
